@@ -1,0 +1,34 @@
+/* good */
+.list {
+  color: green;
+}
+
+/* good */
+.list-item {
+  color: green;
+}
+
+/* good */
+li:nth-of-type(2n) {
+  color: green;
+}
+
+/* good */
+.list > .list-item:nth-last-of-type(1)::before {
+  color: green;
+}
+
+/* good (:target, :hover is ignored) */
+.list:target > .list-item:hover {
+  color: green;
+}
+
+/* bad */
+.not-found {
+  color: red;
+}
+
+/* bad */
+.list-item:last-child + li {
+  color: red;
+}

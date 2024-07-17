@@ -1,0 +1,76 @@
+{
+  "name": "stylelint-no-unused-selectors",
+  "version": "1.0.4",
+  "description": "A rule for stylelint to disallow unused selectors",
+  "main": "dist/index.js",
+  "repository": "https://github.com/nodaguti/stylelint-no-unused-selectors",
+  "author": "nodaguti",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.16.0"
+  },
+  "keywords": [
+    "stylelint-plugin"
+  ],
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "clean": "rimraf dist .tsbuildinfo",
+    "build": "tsc --project ./tsconfig.json --outDir dist",
+    "lint": "tsc --project ./tsconfig.json --noEmit && eslint --cache 'src/**/*.{ts,tsx,js,jsx}'",
+    "fmt": "prettier --write '*.{ts,tsx,js,jsx,json,md}' '{src,examples}/**/*.{ts,tsx,js,jsx,json,md}'",
+    "check_fmt": "yarn fmt && git diff --exit-code",
+    "test": "jest",
+    "release": "yarn clean && yarn build && env-cmd semantic-release --no-ci"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@babel/parser": "^7.4.4",
+    "@babel/traverse": "^7.4.4",
+    "array.prototype.flatmap": "^1.2.1",
+    "jsdom": "^15.0.0",
+    "option-t": "^20.0.0",
+    "postcss-resolve-nested-selector": "^0.1.1",
+    "postcss-selector-parser": "^6.0.2",
+    "string-template": "^1.0.0",
+    "typescript": "^3.4.5"
+  },
+  "peerDependencies": {
+    "stylelint": "^9.10.1 || ^10.0.0"
+  },
+  "devDependencies": {
+    "@babel/types": "7.8.3",
+    "@types/array.prototype.flatmap": "1.2.0",
+    "@types/jest": "24.9.0",
+    "@types/jsdom": "12.2.4",
+    "@types/node": "12.12.21",
+    "@types/react": "16.9.20",
+    "@types/string-template": "1.0.2",
+    "@types/stylelint": "9.10.1",
+    "@typescript-eslint/eslint-plugin": "1.13.0",
+    "@typescript-eslint/parser": "1.13.0",
+    "env-cmd": "10.0.1",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.9.0",
+    "husky": "3.1.0",
+    "jest": "24.9.0",
+    "lint-staged": "9.5.0",
+    "prettier": "1.18.2",
+    "react": "16.12.0",
+    "rimraf": "3.0.0",
+    "semantic-release": "15.14.0",
+    "stylelint": "10.1.0",
+    "ts-jest": "24.3.0"
+  }
+}
