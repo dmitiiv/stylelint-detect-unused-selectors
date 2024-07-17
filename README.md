@@ -2,6 +2,11 @@
 
 [![CircleCI](https://circleci.com/gh/nodaguti/stylelint-no-unused-selectors.svg?style=svg)](https://circleci.com/gh/nodaguti/stylelint-no-unused-selectors) [![Dependabot](https://flat.badgen.net/dependabot/nodaguti/stylelint-no-unused-selectors?icon=dependabot)](https://dependabot.com/) [![MIT License](https://img.shields.io/npm/l/stylelint-no-unused-selectors.svg)](https://github.com/nodaguti/stylelint-no-unused-selectors/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/stylelint-no-unused-selectors.svg)](https://www.npmjs.com/package/stylelint-no-unused-selectors)
 
+## Important info and links
+
+This repo is a fork of https://github.com/nodaguti/stylelint-no-unused-selectors
+unfortunately I did not see any support for the repo from owner and decided to fork the project
+
 ## Concepts
 
 `stylelint-no-unused-selectors` is a [stylelint](https://github.com/stylelint/stylelint) rule to disallow unused CSS selectors.
