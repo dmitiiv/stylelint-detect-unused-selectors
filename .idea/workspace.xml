@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="153e6bac-55e5-49b9-b6d1-cf2b87a1fe40" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/js-class-components/.stylelintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/js-class-components/test.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/js-class-components/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/js-functional-components/.stylelintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/js-functional-components/test.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/js-functional-components/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/options.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/options.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__tests__/js-class-components.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__tests__/js-functional-components.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +29,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat-js&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/davarlamov/User/projects/stylelint-detect-unused-selectors/examples&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -72,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721200832811</updated>
       <workItem from="1721200833886" duration="4337000" />
-      <workItem from="1721205190206" duration="2757000" />
+      <workItem from="1721205190206" duration="5740000" />
     </task>
     <servers />
   </component>
@@ -90,7 +86,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="feat_js" />
+                        <option value="feat-js" />
                       </list>
                     </value>
                   </entry>
