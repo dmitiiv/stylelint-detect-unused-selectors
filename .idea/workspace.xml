@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="153e6bac-55e5-49b9-b6d1-cf2b87a1fe40" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylelint-no-unused-selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylelint-no-unused-selectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__tests__/__snapshots__/js-class-components.spec.ts.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/__snapshots__/js-class-components.spec.ts.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__tests__/parser-options.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/parser-options.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721200832811</updated>
       <workItem from="1721200833886" duration="4337000" />
-      <workItem from="1721205190206" duration="6591000" />
+      <workItem from="1721205190206" duration="7047000" />
     </task>
     <servers />
   </component>
