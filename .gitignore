@@ -22,4 +22,4 @@ dist/
 .env
 
 # ide
-.idea
+.idea/
