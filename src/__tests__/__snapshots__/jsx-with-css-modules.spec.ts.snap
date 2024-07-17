@@ -12,9 +12,9 @@ exports[`Disabllow selectors that are not used in a JSX file using CSS Modules 1
       "endColumn": 2,
       "endLine": 24,
       "line": 22,
-      "rule": "plugin/no-unused-selectors",
+      "rule": "plugin/detect-unused-selectors",
       "severity": "error",
-      "text": ".not-found is defined but doesn't match any elements in test.jsx. (plugin/no-unused-selectors)",
+      "text": ".not-found is defined but doesn't match any elements in test.jsx. (plugin/detect-unused-selectors)",
     },
   ],
 }

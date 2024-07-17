@@ -5,7 +5,7 @@ const fixturesRoot = path.join(__dirname, '..', '..', 'examples', 'jsx');
 const config = {
   plugins: [path.join(__dirname, '..', '..', 'dist', 'index.js')],
   rules: {
-    'plugin/no-unused-selectors': [
+    'plugin/detect-unused-selectors': [
       true,
       {
         plugins: [

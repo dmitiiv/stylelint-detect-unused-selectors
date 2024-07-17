@@ -17,7 +17,7 @@ import { DeepPartial } from './types/deep-partial';
 import { resolveDocuments, resolveDocument } from './utils/document-resolver';
 import { removeUnassertiveSelector } from './utils/remove-unassertive-selector';
 
-export const ruleName = 'plugin/no-unused-selectors';
+export const ruleName = 'plugin/detect-unused-selectors';
 export const messages = stylelint.utils.ruleMessages(ruleName, {
   rejected: (selector: string, documentName: string): string =>
     `${selector} is defined but doesn't match any elements in ${documentName}.`,

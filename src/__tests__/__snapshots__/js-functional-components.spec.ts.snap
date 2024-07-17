@@ -12,9 +12,9 @@ exports[`Disabllow selectors that are not used in a JS file and Functional compo
       "endColumn": 2,
       "endLine": 24,
       "line": 22,
-      "rule": "plugin/no-unused-selectors",
+      "rule": "plugin/detect-unused-selectors",
       "severity": "error",
-      "text": ".not-found is defined but doesn't match any elements in test.js. (plugin/no-unused-selectors)",
+      "text": ".not-found is defined but doesn't match any elements in test.js. (plugin/detect-unused-selectors)",
     },
   ],
 }

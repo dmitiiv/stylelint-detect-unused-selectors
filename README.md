@@ -46,15 +46,15 @@ yarn add stylelint stylelint-no-unused-selectors
 
 ## Usage
 
-It works as a [stylelint](https://github.com/stylelint/stylelint) rule, and its plugin name is `plugin/no-unused-selectors`. An example configuration of stylelint would look like:
+It works as a [stylelint](https://github.com/stylelint/stylelint) rule, and its plugin name is `plugin/detect-unused-selectors`. An example configuration of stylelint would look like:
 
 ```
 {
   "plugins": [
-    "stylelint-no-unused-selectors"
+    "stylelint-detect-unused-selectors"
   ],
   "rules": {
-    "plugin/no-unused-selectors": true
+    "plugin/detect-unused-selectors": true
   }
 }
 ```
@@ -70,22 +70,25 @@ The default configuration is:
 ```json
 {
   "rules": {
-    "plugin/no-unused-selectors": {
+    "plugin/detect-unused-selectors": {
       "suffixesToStrip": [".module"],
       "documents": [
         "{cssDir}/{cssName}.tsx",
         "{cssDir}/{cssName}.jsx",
+        "{cssDir}/{cssName}.js",
         "{cssDir}/{cssName}.html",
         "{cssDir}/{cssName}.htm",
         "{cssDir}/index.tsx",
         "{cssDir}/index.jsx",
+        "{cssDir}/index.js",
         "{cssDir}/index.html",
         "{cssDir}/index.htm",
         "{cssDir}/{cssDirName}.tsx",
         "{cssDir}/{cssDirName}.jsx",
+        "{cssDir}/{cssDirName}.js",
         "{cssDir}/{cssDirName}.html",
         "{cssDir}/{cssDirName}.htm"
-      ]
+      ],
       "plugins": [
         {
           "test": "\\.html?$",
@@ -96,7 +99,7 @@ The default configuration is:
           "plugin": "stylelint-no-unused-selectors-plugin-jsx",
           "options": {
             "sourceType": "module",
-            "plugins": ["jsx", "flow"]
+            "plugins": ["jsx", "flow", "classProperties"]
           }
         },
         {
