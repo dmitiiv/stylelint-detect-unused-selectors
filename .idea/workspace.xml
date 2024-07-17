@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="153e6bac-55e5-49b9-b6d1-cf2b87a1fe40" name="Changes" comment="" />
+    <list default="true" id="153e6bac-55e5-49b9-b6d1-cf2b87a1fe40" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -25,7 +32,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main-js",
     "last_opened_file_path": "/Users/davarlamov/User/projects/stylelint-detect-unused-selectors/examples",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -64,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721200832811</updated>
       <workItem from="1721200833886" duration="4337000" />
-      <workItem from="1721205190206" duration="10558000" />
+      <workItem from="1721205190206" duration="9436000" />
     </task>
     <servers />
   </component>

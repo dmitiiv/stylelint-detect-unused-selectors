@@ -1,6 +1,11 @@
-# stylelint-no-unused-selectors
+# stylelint-detect-unused-selectors
 
 [![CircleCI](https://circleci.com/gh/nodaguti/stylelint-no-unused-selectors.svg?style=svg)](https://circleci.com/gh/nodaguti/stylelint-no-unused-selectors) [![Dependabot](https://flat.badgen.net/dependabot/nodaguti/stylelint-no-unused-selectors?icon=dependabot)](https://dependabot.com/) [![MIT License](https://img.shields.io/npm/l/stylelint-no-unused-selectors.svg)](https://github.com/nodaguti/stylelint-no-unused-selectors/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/stylelint-no-unused-selectors.svg)](https://www.npmjs.com/package/stylelint-no-unused-selectors)
+
+## Important info and links
+
+This repo is a fork of https://github.com/nodaguti/stylelint-no-unused-selectors
+unfortunately I did not see any support for the repo from owner and decided to fork the project
 
 ## Concepts
 
@@ -41,15 +46,15 @@ yarn add stylelint stylelint-no-unused-selectors
 
 ## Usage
 
-It works as a [stylelint](https://github.com/stylelint/stylelint) rule, and its plugin name is `plugin/no-unused-selectors`. An example configuration of stylelint would look like:
+It works as a [stylelint](https://github.com/stylelint/stylelint) rule, and its plugin name is `plugin/detect-unused-selectors`. An example configuration of stylelint would look like:
 
 ```
 {
   "plugins": [
-    "stylelint-no-unused-selectors"
+    "stylelint-detect-unused-selectors"
   ],
   "rules": {
-    "plugin/no-unused-selectors": true
+    "plugin/detect-unused-selectors": true
   }
 }
 ```
@@ -65,23 +70,25 @@ The default configuration is:
 ```json
 {
   "rules": {
-    "plugin/no-unused-selectors": {
-      "resolve": {
-        "documents": [
-          "{cssDir}/{cssName}.tsx",
-          "{cssDir}/{cssName}.jsx",
-          "{cssDir}/{cssName}.html",
-          "{cssDir}/{cssName}.htm",
-          "{cssDir}/{cssDirName}.tsx",
-          "{cssDir}/{cssDirName}.jsx",
-          "{cssDir}/{cssDirName}.html",
-          "{cssDir}/{cssDirName}.htm",
-          "{cssDir}/index.tsx",
-          "{cssDir}/index.jsx",
-          "{cssDir}/index.html",
-          "{cssDir}/index.htm"
-        ]
-      },
+    "plugin/detect-unused-selectors": {
+      "suffixesToStrip": [".module"],
+      "documents": [
+        "{cssDir}/{cssName}.tsx",
+        "{cssDir}/{cssName}.jsx",
+        "{cssDir}/{cssName}.js",
+        "{cssDir}/{cssName}.html",
+        "{cssDir}/{cssName}.htm",
+        "{cssDir}/index.tsx",
+        "{cssDir}/index.jsx",
+        "{cssDir}/index.js",
+        "{cssDir}/index.html",
+        "{cssDir}/index.htm",
+        "{cssDir}/{cssDirName}.tsx",
+        "{cssDir}/{cssDirName}.jsx",
+        "{cssDir}/{cssDirName}.js",
+        "{cssDir}/{cssDirName}.html",
+        "{cssDir}/{cssDirName}.htm"
+      ],
       "plugins": [
         {
           "test": "\\.html?$",
@@ -92,7 +99,7 @@ The default configuration is:
           "plugin": "stylelint-no-unused-selectors-plugin-jsx",
           "options": {
             "sourceType": "module",
-            "plugins": ["jsx", "flow"]
+            "plugins": ["jsx", "flow", "classProperties"]
           }
         },
         {
@@ -105,7 +112,7 @@ The default configuration is:
 }
 ```
 
-### resolve.documents
+### documents
 
 Type: `Array<string>`
 
@@ -118,6 +125,12 @@ Available variables are as follows:
 | `{cssDir}`     | The path to a directory that contains a CSS file  | /project_root/components/Foo                   |
 | `{cssDirName}` | The name of a directory that contains a CSS file  | Foo                                            |
 | `{cssName}`    | The file name of a CSS file without its extension | Bar                                            |
+
+### suffixesToStrip
+
+Type: `Array<string>`
+
+If the cssName ends with one of these suffixes, then the suffix will be remove from the cssName.
 
 ### plugins
 

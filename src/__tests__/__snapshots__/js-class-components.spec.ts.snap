@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Disabllow selectors that are not used in a JSX file using CSS Modules 1`] = `
+exports[`Disabllow selectors that are not used in a JS file and Class component 1`] = `
 {
   "deprecations": [],
   "errored": true,
@@ -10,11 +10,11 @@ exports[`Disabllow selectors that are not used in a JSX file using CSS Modules 1
     {
       "column": 1,
       "endColumn": 2,
-      "endLine": 24,
-      "line": 22,
+      "endLine": 29,
+      "line": 27,
       "rule": "plugin/detect-unused-selectors",
       "severity": "error",
-      "text": ".not-found is defined but doesn't match any elements in test.jsx. (plugin/detect-unused-selectors)",
+      "text": ".not-found is defined but doesn't match any elements in test.js. (plugin/detect-unused-selectors)",
     },
   ],
 }

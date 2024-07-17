@@ -5,18 +5,21 @@ const fixturesRoot = path.join(__dirname, '..', '..', 'examples', 'jsx');
 const config = {
   plugins: [path.join(__dirname, '..', '..', 'dist', 'index.js')],
   rules: {
-    'plugin/no-unused-selectors': {
-      plugins: [
-        {
-          test: '\\.jsx?$',
-          plugin: 'stylelint-no-unused-selectors-plugin-jsx',
-          options: {
-            sourceType: 'module',
-            plugins: [],
+    'plugin/detect-unused-selectors': [
+      true,
+      {
+        plugins: [
+          {
+            test: '\\.jsx?$',
+            plugin: 'stylelint-no-unused-selectors-plugin-jsx',
+            options: {
+              sourceType: 'module',
+              plugins: [],
+            },
           },
-        },
-      ],
-    },
+        ],
+      },
+    ],
   },
 };
 

@@ -5,9 +5,8 @@ import { andThenForUndefinable } from 'option-t/lib/Undefinable/andThen';
 
 import flatMap from 'array.prototype.flatmap';
 
-import stylelint from 'stylelint';
-import { Root, Result } from 'postcss';
-// @ts-ignore
+import stylelint, { PostcssResult } from 'stylelint';
+import { Root } from 'postcss';
 import resolveNestedSelector from 'postcss-resolve-nested-selector';
 import createSelectorProcessor from 'postcss-selector-parser';
 
@@ -18,7 +17,7 @@ import { DeepPartial } from './types/deep-partial';
 import { resolveDocuments, resolveDocument } from './utils/document-resolver';
 import { removeUnassertiveSelector } from './utils/remove-unassertive-selector';
 
-export const ruleName = 'plugin/no-unused-selectors';
+export const ruleName = 'plugin/detect-unused-selectors';
 export const messages = stylelint.utils.ruleMessages(ruleName, {
   rejected: (selector: string, documentName: string): string =>
     `${selector} is defined but doesn't match any elements in ${documentName}.`,
@@ -34,15 +33,15 @@ function getCSSSource(root: Root): Undefinable<string> {
 }
 
 function rule(
-  options?: DeepPartial<Options> | boolean,
-): (root: Root, result: Result) => Promise<void> {
+  primary: boolean,
+  secondaryOptions?: DeepPartial<Options>,
+): (root: Root, result: PostcssResult) => Promise<void> | void {
   return async (root, result): Promise<void> => {
-    if (options === false) {
+    if (!primary) {
       return;
     }
 
     const cssSrc = getCSSSource(root);
-
     if (!cssSrc) {
       return;
     }
@@ -50,64 +49,64 @@ function rule(
     const opts = normaliseOptions(
       result,
       ruleName,
-      typeof options === 'object' ? options : {},
+      typeof secondaryOptions === 'object' ? secondaryOptions : {},
     );
-
     if (!opts) {
       return;
     }
 
-    const documentPaths = resolveDocuments(cssSrc, opts.resolve.documents);
+    const documentPaths = resolveDocuments(
+      cssSrc,
+      opts.suffixesToStrip,
+      opts.documents,
+    );
     const resolution = await resolveDocument(documentPaths);
-
     if (!resolution) {
       return;
     }
 
     const { path: documentPath, document } = resolution;
-    const pluginSet = await getPlugin(documentPath, opts.plugins);
 
+    const pluginSet = await getPlugin(documentPath, opts.plugins);
     if (!pluginSet) {
       return;
     }
 
     const { plugin, options: pluginOptions } = pluginSet;
 
-    await plugin.parse(document, pluginOptions);
+    plugin.parse(document, pluginOptions);
 
-    root.walkRules(
-      async (rule): Promise<void> => {
-        if (!rule.selectors) {
-          return;
-        }
+    root.walkRules((rule) => {
+      if (!rule.selectors) {
+        return;
+      }
 
-        const resolvedSelectors = flatMap(
-          rule.selectors,
-          (selectors): string[] => resolveNestedSelector(selectors, rule),
+      const resolvedSelectors = flatMap(rule.selectors, (selector) =>
+        resolveNestedSelector(selector, rule),
+      );
+
+      resolvedSelectors.forEach((selector: string) => {
+        const selectorAst = selectorProcessor.astSync(selector);
+        const filteredAst = removeUnassertiveSelector(selectorAst);
+        const matched = unwrapUndefinable(plugin).match(
+          filteredAst,
+          pluginOptions,
         );
 
-        async function processSelector(selector: string): Promise<void> {
-          const selectorAst = await selectorProcessor.ast(selector);
-          const filteredAst = removeUnassertiveSelector(selectorAst);
-          const matched = await unwrapUndefinable(plugin).match(
-            filteredAst,
-            pluginOptions,
-          );
-
-          if (!matched) {
-            stylelint.utils.report({
-              result,
-              ruleName,
-              node: rule,
-              message: messages.rejected(selector, path.basename(documentPath)),
-            });
-          }
+        if (!matched) {
+          stylelint.utils.report({
+            result,
+            ruleName,
+            node: rule,
+            message: messages.rejected(selector, path.basename(documentPath)),
+          });
         }
-
-        await Promise.all(resolvedSelectors.map(processSelector));
-      },
-    );
+      });
+    });
   };
 }
+
+rule.ruleName = ruleName;
+rule.messages = messages;
 
 export default stylelint.createPlugin(ruleName, rule);
