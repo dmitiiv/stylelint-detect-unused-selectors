@@ -1,4 +1,4 @@
-# stylelint-no-unused-selectors
+# stylelint-detect-unused-selectors
 
 [![CircleCI](https://circleci.com/gh/nodaguti/stylelint-no-unused-selectors.svg?style=svg)](https://circleci.com/gh/nodaguti/stylelint-no-unused-selectors) [![Dependabot](https://flat.badgen.net/dependabot/nodaguti/stylelint-no-unused-selectors?icon=dependabot)](https://dependabot.com/) [![MIT License](https://img.shields.io/npm/l/stylelint-no-unused-selectors.svg)](https://github.com/nodaguti/stylelint-no-unused-selectors/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/stylelint-no-unused-selectors.svg)](https://www.npmjs.com/package/stylelint-no-unused-selectors)
 
