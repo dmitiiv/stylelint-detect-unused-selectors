@@ -1,0 +1,43 @@
+/* good */
+.plain {
+  color: green;
+}
+
+/* good */
+.plain::before {
+  color: green;
+}
+
+/* good */
+.space-separated-1 {
+  color: green;
+}
+
+/* good */
+.in-array {
+  color: green;
+}
+
+/* bad */
+.not-found {
+  color: red;
+}
+
+.inRow {
+  display: flex;
+}
+
+/* ignored */
+.not-found div {
+  color: gray;
+}
+
+/* ignored */
+.not-found > div {
+  color: gray;
+}
+
+/* ignored */
+.not-found:last-child {
+  color: gray;
+}

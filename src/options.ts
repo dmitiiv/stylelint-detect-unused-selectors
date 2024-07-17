@@ -20,14 +20,17 @@ const defaultOptions: Options = {
   documents: [
     '{cssDir}/{cssName}.tsx',
     '{cssDir}/{cssName}.jsx',
+    '{cssDir}/{cssName}.js',
     '{cssDir}/{cssName}.html',
     '{cssDir}/{cssName}.htm',
     '{cssDir}/index.tsx',
     '{cssDir}/index.jsx',
+    '{cssDir}/index.js',
     '{cssDir}/index.html',
     '{cssDir}/index.htm',
     '{cssDir}/{cssDirName}.tsx',
     '{cssDir}/{cssDirName}.jsx',
+    '{cssDir}/{cssDirName}.js',
     '{cssDir}/{cssDirName}.html',
     '{cssDir}/{cssDirName}.htm',
   ],
@@ -41,7 +44,7 @@ const defaultOptions: Options = {
       plugin: 'stylelint-no-unused-selectors-plugin-jsx',
       options: {
         sourceType: 'module',
-        plugins: ['jsx', 'flow'],
+        plugins: ['jsx', 'flow', 'classProperties'],
       },
     },
     {
