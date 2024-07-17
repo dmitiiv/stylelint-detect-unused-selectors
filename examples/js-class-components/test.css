@@ -18,13 +18,14 @@
   color: green;
 }
 
+/* good */
+.in-row {
+  display: flex;
+}
+
 /* bad */
 .not-found {
   color: red;
-}
-
-.inRow {
-  display: flex;
 }
 
 /* ignored */
