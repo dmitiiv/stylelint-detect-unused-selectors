@@ -6,7 +6,7 @@ const config = {
   plugins: [path.join(__dirname, '..', '..', 'dist', 'index.js')],
   rules: {
     'plugin/detect-unused-selectors': [
-      true,
+      'error',
       {
         plugins: [
           {

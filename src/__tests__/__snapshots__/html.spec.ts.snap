@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Disabllow selectors that are not used in a HTML file 1`] = `
+exports[`Disallow selectors with error that are not used in a HTML file 1`] = `
 {
   "deprecations": [],
   "errored": true,
@@ -23,6 +23,35 @@ exports[`Disabllow selectors that are not used in a HTML file 1`] = `
       "line": 32,
       "rule": "plugin/detect-unused-selectors",
       "severity": "error",
+      "text": ".list-item:last-child + li is defined but doesn't match any elements in test.html. (plugin/detect-unused-selectors)",
+    },
+  ],
+}
+`;
+
+exports[`Disallow selectors with warning that are not used in a HTML file 1`] = `
+{
+  "deprecations": [],
+  "errored": false,
+  "invalidOptionWarnings": [],
+  "parseErrors": [],
+  "warnings": [
+    {
+      "column": 1,
+      "endColumn": 2,
+      "endLine": 29,
+      "line": 27,
+      "rule": "plugin/detect-unused-selectors",
+      "severity": "warning",
+      "text": ".not-found is defined but doesn't match any elements in test.html. (plugin/detect-unused-selectors)",
+    },
+    {
+      "column": 1,
+      "endColumn": 2,
+      "endLine": 34,
+      "line": 32,
+      "rule": "plugin/detect-unused-selectors",
+      "severity": "warning",
       "text": ".list-item:last-child + li is defined but doesn't match any elements in test.html. (plugin/detect-unused-selectors)",
     },
   ],

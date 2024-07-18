@@ -10,10 +10,10 @@ import { Root } from 'postcss';
 import resolveNestedSelector from 'postcss-resolve-nested-selector';
 import createSelectorProcessor from 'postcss-selector-parser';
 
-import { Options, normaliseOptions } from './options';
+import { Options, normaliseOptions, normalizePrimary } from './options';
 import { getPlugin } from './plugin';
 
-import { DeepPartial } from './types/deep-partial';
+import { DeepPartial, Primary } from './types/deep-partial';
 import { resolveDocuments, resolveDocument } from './utils/document-resolver';
 import { removeUnassertiveSelector } from './utils/remove-unassertive-selector';
 
@@ -33,11 +33,13 @@ function getCSSSource(root: Root): Undefinable<string> {
 }
 
 function rule(
-  primary: boolean,
+  primary: Undefinable<Primary>,
   secondaryOptions?: DeepPartial<Options>,
 ): (root: Root, result: PostcssResult) => Promise<void> | void {
   return async (root, result): Promise<void> => {
-    if (!primary) {
+    const primaryOpt = normalizePrimary(result, ruleName, primary);
+
+    if (!primaryOpt) {
       return;
     }
 
@@ -99,7 +101,7 @@ function rule(
             ruleName,
             node: rule,
             message: messages.rejected(selector, path.basename(documentPath)),
-            severity: 'warning',
+            severity: primaryOpt,
           });
         }
       });
