@@ -9,7 +9,7 @@ unfortunately I did not see any support for the repo from owner and decided to f
 
 ## Concepts
 
-`stylelint-no-unused-selectors` is a [stylelint](https://github.com/stylelint/stylelint) rule to disallow unused CSS selectors.
+`stylelint-detect-unused-selectors` is a [stylelint](https://github.com/stylelint/stylelint) rule to disallow unused CSS selectors.
 
 It works best with component-oriented applications where views are built on top of a lot of small components, each of which contains a template file (e.g., jsx or tsx) and its corresponding scoped CSS file (e.g., CSS Modules or PostCSS with BEM).
 
@@ -41,7 +41,8 @@ See [the documentations of built-in plugins](#built-in-plugins) for more details
 ## Installation
 
 ```
-yarn add stylelint stylelint-no-unused-selectors
+yarn add -S -D stylelint stylelint-detect-unused-selectors
+npm i -S -D stylelint stylelint-detect-unused-selectors
 ```
 
 ## Usage
