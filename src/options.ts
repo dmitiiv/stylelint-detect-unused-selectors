@@ -25,7 +25,6 @@ const defaultOptions: Options = {
     '{cssDir}/{cssName}.htm',
     '{cssDir}/index.tsx',
     '{cssDir}/index.jsx',
-    '{cssDir}/index.js',
     '{cssDir}/index.html',
     '{cssDir}/index.htm',
     '{cssDir}/{cssDirName}.tsx',
