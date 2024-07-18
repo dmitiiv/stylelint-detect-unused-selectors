@@ -99,6 +99,7 @@ function rule(
             ruleName,
             node: rule,
             message: messages.rejected(selector, path.basename(documentPath)),
+            severity: 'warning',
           });
         }
       });
