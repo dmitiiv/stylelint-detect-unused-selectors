@@ -1,19 +1,23 @@
 import path from 'path';
 import stylelint from 'stylelint';
 import { parseResult } from './__helpers__/parse-result';
+import { getLintOptions } from './__helpers__/get-lint-option';
 
 const fixturesRoot = path.join(__dirname, '..', '..', 'examples', 'tsx');
-const configFilePath = path.join(fixturesRoot, '.stylelintrc.js');
 
-test('Disabllow selectors that are not used in a TSX file', async (): Promise<
+test('Disallow selectors with warning that are not used in a TSX file', async (): Promise<
   void
 > => {
-  const options = {
-    configFile: configFilePath,
-    files: path.join(fixturesRoot, '*.css'),
-  };
+  const result = await stylelint.lint(getLintOptions('warning', fixturesRoot));
 
-  const result = await stylelint.lint(options);
+  expect(result.results[0].warnings).toHaveLength(1);
+  expect(parseResult(result)).toMatchSnapshot();
+});
+
+test('Disallow selectors with error that are not used in a TSX file', async (): Promise<
+  void
+> => {
+  const result = await stylelint.lint(getLintOptions('error', fixturesRoot));
 
   expect(result.errored).toBe(true);
   expect(parseResult(result)).toMatchSnapshot();

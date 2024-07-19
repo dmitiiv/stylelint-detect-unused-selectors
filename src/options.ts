@@ -1,7 +1,7 @@
 import { Undefinable } from 'option-t/lib/Undefinable';
 import stylelint, { PostcssResult } from 'stylelint';
 
-import { DeepPartial } from './types/deep-partial';
+import { DeepPartial, Primary } from './types/deep-partial';
 
 export interface PluginSetting {
   test: string;
@@ -53,6 +53,21 @@ const defaultOptions: Options = {
   ],
 };
 
+export function normalizePrimary(
+  result: PostcssResult,
+  ruleName: string,
+  primary: Undefinable<Primary>,
+) {
+  const isValidPrimary = stylelint.utils.validateOptions(result, ruleName, {
+    actual: primary,
+    possible: ['warning', 'error'],
+  });
+
+  if (!isValidPrimary) return;
+
+  return primary;
+}
+
 export function normaliseOptions(
   result: PostcssResult,
   ruleName: string,
@@ -80,6 +95,5 @@ export function normaliseOptions(
     return;
   }
 
-  const mergedOpts = Object.assign(defaultOptions, options);
-  return mergedOpts;
+  return Object.assign(defaultOptions, options);
 }

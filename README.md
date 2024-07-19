@@ -26,13 +26,13 @@ when `stylelint-no-unused-selectors` runs on FooComponent.css, it extracts `clas
 
 ## Features
 
-If you'd like to jump into code, you can find [our examples in the repository](https://github.com/nodaguti/stylelint-no-unused-selectors/tree/master/examples) that are close to real-world situations.
+If you'd like to jump into code, you can find [our examples in the repository](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/examples) that are close to real-world situations.
 
 With the built-in plugins, it supports
 
-- HTML via [stylelint-no-unused-selectors-plugin-html](https://github.com/nodaguti/stylelint-no-unused-selectors/tree/master/src/plugins/stylelint-no-unused-selectors-plugin-html)
-- React components written in pure JavaScript, JSX, flow-typed JSX, JSX + future syntaxes in TC39 proposals via [stylelint-no-unused-selectors-plugin-jsx](https://github.com/nodaguti/stylelint-no-unused-selectors/tree/master/src/plugins/stylelint-no-unused-selectors-plugin-jsx)
-- React components written in TypeScript via [stylelint-no-unused-selectors-plugin-tsx](https://github.com/nodaguti/stylelint-no-unused-selectors/tree/master/src/plugins/stylelint-no-unused-selectors-plugin-tsx)
+- HTML via [stylelint-no-unused-selectors-plugin-html](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-html)
+- React components written in pure JavaScript, JSX, flow-typed JSX, JSX + future syntaxes in TC39 proposals via [stylelint-no-unused-selectors-plugin-jsx](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-jsx)
+- React components written in TypeScript via [stylelint-no-unused-selectors-plugin-tsx](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-tsx)
 - [CSS Modules](https://github.com/css-modules/css-modules)
 - Basic usages of [`classnames`](https://github.com/JedWatson/classnames) package
 
@@ -55,7 +55,7 @@ It works as a [stylelint](https://github.com/stylelint/stylelint) rule, and its 
     "stylelint-detect-unused-selectors"
   ],
   "rules": {
-    "plugin/detect-unused-selectors": true
+    "plugin/detect-unused-selectors": "error | warning"
   }
 }
 ```
@@ -81,6 +81,7 @@ The default configuration is:
         "{cssDir}/{cssName}.htm",
         "{cssDir}/index.tsx",
         "{cssDir}/index.jsx",
+        "{cssDir}/index.js",
         "{cssDir}/index.html",
         "{cssDir}/index.htm",
         "{cssDir}/{cssDirName}.tsx",
@@ -160,9 +161,9 @@ An optional object that will be passed to a plugin, which can be used as parser'
 
 ### Built-in Plugins
 
-- [stylelint-no-unused-selectors-plugin-html](https://github.com/nodaguti/stylelint-no-unused-selectors/tree/master/src/plugins/stylelint-no-unused-selectors-plugin-html)
-- [stylelint-no-unused-selectors-plugin-jsx](https://github.com/nodaguti/stylelint-no-unused-selectors/tree/master/src/plugins/stylelint-no-unused-selectors-plugin-jsx)
-- [stylelint-no-unused-selectors-plugin-tsx](https://github.com/nodaguti/stylelint-no-unused-selectors/tree/master/src/plugins/stylelint-no-unused-selectors-plugin-tsx)
+- [stylelint-no-unused-selectors-plugin-html](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-html)
+- [stylelint-no-unused-selectors-plugin-jsx](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-jsx)
+- [stylelint-no-unused-selectors-plugin-tsx](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-tsx)
 
 ### Writing a new plugin
 
@@ -170,7 +171,7 @@ An optional object that will be passed to a plugin, which can be used as parser'
 
 ## License
 
-[The MIT License](https://raw.githubusercontent.com/nodaguti/stylelint-no-unused-selectors/master/LICENSE).
+[The MIT License](https://raw.githubusercontent.com/dmitiiv/stylelint-detect-unused-selectors/main/LICENSE).
 
 ## Existing Tools
 
