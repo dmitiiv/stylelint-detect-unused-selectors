@@ -1,6 +1,6 @@
 # stylelint-detect-unused-selectors
 
-[![CircleCI](https://circleci.com/gh/nodaguti/stylelint-no-unused-selectors.svg?style=svg)](https://circleci.com/gh/nodaguti/stylelint-no-unused-selectors) [![Dependabot](https://flat.badgen.net/dependabot/nodaguti/stylelint-no-unused-selectors?icon=dependabot)](https://dependabot.com/) [![MIT License](https://img.shields.io/npm/l/stylelint-no-unused-selectors.svg)](https://github.com/nodaguti/stylelint-no-unused-selectors/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/stylelint-no-unused-selectors.svg)](https://www.npmjs.com/package/stylelint-no-unused-selectors)
+[![MIT License](https://img.shields.io/npm/l/stylelint-detect-unused-selectors)](https://github.com/dmitiiv/stylelint-detect-unused-selectors/blob/main/LICENSE) [![npm](https://img.shields.io/npm/v/stylelint-detect-unused-selectors)](https://www.npmjs.com/package/stylelint-detect-unused-selectors?activeTab=readme)
 
 ## Important info and links
 
@@ -81,7 +81,6 @@ The default configuration is:
         "{cssDir}/{cssName}.htm",
         "{cssDir}/index.tsx",
         "{cssDir}/index.jsx",
-        "{cssDir}/index.js",
         "{cssDir}/index.html",
         "{cssDir}/index.htm",
         "{cssDir}/{cssDirName}.tsx",
@@ -137,7 +136,7 @@ If the cssName ends with one of these suffixes, then the suffix will be remove f
 
 Type: `Array<Plugin>`
 
-`stylelint-no-unused-selectors` relies on plugins to extract `className`s/`id`s and/or determine if a selector is used in a template file.
+`stylelint-detect-unused-selectors` relies on plugins to extract `className`s/`id`s and/or determine if a selector is used in a template file.
 
 #### Plugin.test
 
