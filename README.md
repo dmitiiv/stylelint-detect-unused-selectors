@@ -22,7 +22,7 @@ FooComponent
 └── FooComponent.css
 ```
 
-when `stylelint-no-unused-selectors` runs on FooComponent.css, it extracts `class`es and `id`s from FooComponent.jsx and detects unused CSS rules.
+when `stylelint-detect-unused-selectors` runs on FooComponent.css, it extracts `class`es and `id`s from FooComponent.jsx and detects unused CSS rules.
 
 ## Features
 
