@@ -1,6 +1,6 @@
 {
   "name": "stylelint-detect-unused-selectors",
-  "version": "1.0.45",
+  "version": "1.0.46",
   "description": "A rule for stylelint to detect unused selectors",
   "main": "dist/index.js",
   "repository": "https://github.com/dmitiiv/stylelint-detect-unused-selectors",
@@ -46,9 +46,7 @@
     "postcss-selector-parser": "^6.0.13",
     "string-template": "^1.0.0"
   },
-  "peerDependencies": {
-    "stylelint": "^15.5.0"
-  },
+  "peerDependencies": {},
   "devDependencies": {
     "@babel/types": "7.8.3",
     "@types/array.prototype.flatmap": "1.2.2",
@@ -70,7 +68,7 @@
     "react": "16.12.0",
     "rimraf": "3.0.0",
     "semantic-release": "19.0.3",
-    "stylelint": "^15.5.0",
+    "stylelint": "^14.16.1",
     "ts-jest": "29.1.0",
     "typescript": "^5.0.4"
   }
