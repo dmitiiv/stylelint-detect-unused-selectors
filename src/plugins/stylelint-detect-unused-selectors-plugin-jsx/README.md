@@ -1,8 +1,8 @@
-# stylelint-no-unused-selectors-plugin-tsx
+# stylelint-detect-unused-selectors-plugin-jsx
 
-This is a built-in plugin of `stylelint-no-unused-selector`.
+This is a built-in plugin of `stylelint-detect-unused-selector`.
 
-It parses React files using [TypeScript Compiler API](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API) and extracts `class`es and `id`s from them.
+It parses React files using [@babel/parser](https://babeljs.io/docs/en/babel-parser) and extracts `class`es and `id`s from them.
 
 ## Features and Limitations
 
@@ -14,3 +14,22 @@ It parses React files using [TypeScript Compiler API](https://github.com/Microso
   - Accessing to a classname like `styles.foo` in a React file will be considered that `.foo` is used.
 - [`classnames`](https://github.com/JedWatson/classnames) package is supported.
 - Without CSS Modules, only setting classname using a simple string literal at a `className` attribute or a [`classnames`](https://github.com/JedWatson/classnames) function call is detectable.
+
+## Options
+
+The options are passed through [`@babel/parser`](https://babeljs.io/docs/en/babel-parser). If your project uses [optional chaining proposal](https://github.com/tc39/proposal-optional-chaining), for example, you can tell that to the plugin by specifying
+
+```json
+{
+  "test": "\\.jsx?$",
+  "plugin": "stylelint-detect-unused-selectors-plugin-jsx",
+  "options": {
+    "sourceType": "module",
+    "plugins": ["jsx", "optionalChaining"]
+  }
+},
+```
+
+in the configuration.
+
+The list of `@babel/parser`'s options is available at [their online document](https://babeljs.io/docs/en/babel-parser#options).

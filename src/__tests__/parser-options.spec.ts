@@ -11,7 +11,7 @@ const config = {
         plugins: [
           {
             test: '\\.jsx?$',
-            plugin: 'stylelint-no-unused-selectors-plugin-jsx',
+            plugin: 'stylelint-detect-unused-selectors-plugin-jsx',
             options: {
               sourceType: 'module',
               plugins: [],
