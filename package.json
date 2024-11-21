@@ -1,6 +1,6 @@
 {
   "name": "stylelint-detect-unused-selectors",
-  "version": "1.0.46",
+  "version": "1.0.0",
   "description": "A rule for stylelint to detect unused selectors",
   "main": "dist/index.js",
   "repository": "https://github.com/dmitiiv/stylelint-detect-unused-selectors",
