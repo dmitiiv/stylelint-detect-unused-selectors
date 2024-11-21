@@ -92,7 +92,7 @@ The default configuration is:
       "plugins": [
         {
           "test": "\\.html?$",
-          "plugin": "stylelint-no-unused-selectors-plugin-html"
+          "plugin": "stylelint-detect-unused-selectors-plugin-html"
         },
         {
           "test": "\\.jsx?$",

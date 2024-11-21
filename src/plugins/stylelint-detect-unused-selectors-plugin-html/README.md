@@ -1,6 +1,6 @@
-# stylelint-no-unused-selectors-plugin-html
+# stylelint-detect-unused-selectors-plugin-html
 
-This is a built-in plugin of `stylelint-no-unused-selector`.
+This is a built-in plugin of `stylelint-detect-unused-selector`.
 
 It parses HTML files using [jsdom](https://github.com/jsdom/jsdom) and employs `document.querySelector` to check if a selector is used or not.
 

@@ -7,7 +7,7 @@
   "author": "nodaguti",
   "license": "MIT",
   "engines": {
-    "node": ">=8.16.0"
+    "node": ">=8"
   },
   "keywords": [
     "stylelint-plugin"
