@@ -40,7 +40,7 @@ const defaultOptions: Options = {
     },
     {
       test: '\\.jsx?$',
-      plugin: 'stylelint-no-unused-selectors-plugin-jsx',
+      plugin: 'stylelint-detect-unused-selectors-plugin-jsx',
       options: {
         sourceType: 'module',
         plugins: ['jsx', 'flow', 'classProperties'],
@@ -48,7 +48,7 @@ const defaultOptions: Options = {
     },
     {
       test: '\\.tsx$',
-      plugin: 'stylelint-no-unused-selectors-plugin-tsx',
+      plugin: 'stylelint-detect-unused-selectors-plugin-tsx',
     },
   ],
 };

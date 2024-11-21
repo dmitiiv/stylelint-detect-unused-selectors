@@ -96,7 +96,7 @@ The default configuration is:
         },
         {
           "test": "\\.jsx?$",
-          "plugin": "stylelint-no-unused-selectors-plugin-jsx",
+          "plugin": "stylelint-detect-unused-selectors-plugin-jsx",
           "options": {
             "sourceType": "module",
             "plugins": ["jsx", "flow", "classProperties"]
@@ -104,7 +104,7 @@ The default configuration is:
         },
         {
           "test": "\\.tsx$",
-          "plugin": "stylelint-no-unused-selectors-plugin-tsx"
+          "plugin": "stylelint-detect-unused-selectors-plugin-tsx"
         }
       ]
     }
@@ -160,9 +160,9 @@ An optional object that will be passed to a plugin, which can be used as parser'
 
 ### Built-in Plugins
 
-- [stylelint-no-unused-selectors-plugin-html](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-html)
-- [stylelint-no-unused-selectors-plugin-jsx](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-jsx)
-- [stylelint-no-unused-selectors-plugin-tsx](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-tsx)
+- [stylelint-detect-unused-selectors-plugin-html](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-detect-unused-selectors-plugin-html)
+- [stylelint-detect-unused-selectors-plugin-jsx](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-detect-unused-selectors-plugin-jsx)
+- [stylelint-detect-unused-selectors-plugin-tsx](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-detect-unused-selectors-plugin-tsx)
 
 ### Writing a new plugin
 
