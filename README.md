@@ -30,9 +30,9 @@ If you'd like to jump into code, you can find [our examples in the repository](h
 
 With the built-in plugins, it supports
 
-- HTML via [stylelint-no-unused-selectors-plugin-html](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-html)
-- React components written in pure JavaScript, JSX, flow-typed JSX, JSX + future syntaxes in TC39 proposals via [stylelint-no-unused-selectors-plugin-jsx](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-jsx)
-- React components written in TypeScript via [stylelint-no-unused-selectors-plugin-tsx](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-tsx)
+- HTML via [stylelint-detect-unused-selectors-plugin-html](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-html)
+- React components written in pure JavaScript, JSX, flow-typed JSX, JSX + future syntaxes in TC39 proposals via [stylelint-detect-unused-selectors-plugin-jsx](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-jsx)
+- React components written in TypeScript via [stylelint-detect-unused-selectors-plugin-tsx](https://github.com/dmitiiv/stylelint-detect-unused-selectors/tree/main/src/plugins/stylelint-no-unused-selectors-plugin-tsx)
 - [CSS Modules](https://github.com/css-modules/css-modules)
 - Basic usages of [`classnames`](https://github.com/JedWatson/classnames) package
 

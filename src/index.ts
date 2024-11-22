@@ -2,7 +2,7 @@ import {
   default as rule,
   ruleName,
   messages,
-} from './stylelint-no-unused-selectors';
+} from './stylelint-detect-unused-selectors';
 
 module.exports = rule;
 module.exports.ruleName = ruleName;
